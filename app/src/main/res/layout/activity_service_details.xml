@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dev.final_group.khadamati.screens.client.ServiceDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- صورة الخدمة -->
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image3" />
+
+            <!-- معلومات مزود الخدمة والعنوان -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/userIcon"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/fake_image"
+                    app:roundPercent="0.5" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="عنوان الخدمة"
+                    android:textColor="#333"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!-- وصف الخدمة -->
+            <TextView
+                android:id="@+id/serviceDescriptionTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginVertical="20dp"
+                android:lineSpacingExtra="4dp"
+                android:text="وصف تفصيلي للخدمة التي يقدمها مزود الخدمة. هنا يتم عرض كافة التفاصيل المطلوبة للعميل. . هنا يتم عرض كافة التفاصيل المطلوبة للعميل. . هنا يتم عرض كافة التفاصيل المطلوبة للعميل. . هنا يتم عرض كافة التفاصيل المطلوبة للعميل."
+                android:textSize="16sp" />
+
+            <!-- ✅ السعر -->
+            <TextView
+                android:id="@+id/priceTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="6dp"
+                android:text="💰 السعر المبدئي: 100 شيكل"
+                android:textSize="15sp" />
+
+            <!-- ✅ الموقع -->
+            <TextView
+                android:id="@+id/locationTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="6dp"
+                android:text="📍 العنوان : غزة - الرمال"
+                android:textSize="15sp" />
+
+
+            <!-- ✅ عدد المشاهدات -->
+            <TextView
+                android:id="@+id/viewsCountTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="16dp"
+                android:text="👁️‍🗨️ عدد المشاهدات: 42"
+                android:textSize="15sp" />
+
+            <!-- عنوان التقييمات -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:paddingHorizontal="12dp"
+                android:text="التقييمات"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- RecyclerView للتقييمات -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ratingRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_rating" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        app:contentPaddingLeft="12dp"
+        app:contentPaddingRight="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/requestServiceBt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="#1E88E5"
+                android:text="طلب الخدمة"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
+
+            <ImageView
+                android:id="@+id/btnBookmarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_bookmark_border" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

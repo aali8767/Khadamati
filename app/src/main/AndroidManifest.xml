@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FinalProject"
+        tools:targetApi="31">
+        <activity
+            android:name="dev.final_group.khadamati.screens.service_provider.RatingActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.BookMarksActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.service_provider.EditProviderProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.service_provider.AddServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.service_provider.ServiceDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.service_provider.home.ProviderRequestDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.service_provider.home.HomeServiceProviderActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.EditeProfile"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.RateServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.ProviderServicesActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.ProviderProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.RequestServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.ServiceDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.home.HomeClientActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.auth.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

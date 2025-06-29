@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/dashboard_24"
+        android:orderInCategory="0"
+        android:title="home" />
+
+    <item
+        android:id="@+id/nav_assignment"
+        android:icon="@drawable/assignment_24"
+        android:orderInCategory="1"
+        android:title="assignment" />
+
+    <item
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/notifications_24"
+        android:orderInCategory="2"
+        android:title="notifications" />
+
+
+    <item
+        android:id="@+id/nav_person"
+        android:icon="@drawable/person_search_24"
+        android:orderInCategory="3"
+        android:title="Profile" />
+
+</menu>
