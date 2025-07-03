@@ -15,16 +15,21 @@
         android:title="assignment" />
 
     <item
+        android:id="@+id/nav_my_service"
+        android:icon="@drawable/ic_build"
+        android:orderInCategory="2"
+        android:title="My service" />
+
+    <item
         android:id="@+id/nav_notifications"
         android:icon="@drawable/notifications_24"
-        android:orderInCategory="2"
+        android:orderInCategory="3"
         android:title="notifications" />
-
 
     <item
         android:id="@+id/nav_person"
         android:icon="@drawable/person_search_24"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         android:title="Profile" />
 
 </menu>

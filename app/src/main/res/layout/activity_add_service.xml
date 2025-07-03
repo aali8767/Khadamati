@@ -1,85 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="dev.final_group.khadamati.screens.service_provider.AddServiceActivity">
+    tools:context="dev.final_group.khadamati.screens.service_provider.AddEditServiceActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
-
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/serviceImage"
+        <FrameLayout
+            android:id="@+id/containerAddServiceImage"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="#EEE"
-            android:scaleType="centerCrop"
-            android:src="@drawable/person_24" />
+            android:layout_height="200dp">
 
-        <!-- زر تحميل صورة (اختياري) -->
-        <Button
-            android:id="@+id/btnUploadImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="تحميل صورة" />
+            <ImageView
+                android:id="@+id/ivServiceImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars" />
 
-        <!-- 📌 عنوان الخدمة -->
-        <EditText
-            android:id="@+id/etServiceTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:hint="عنوان الخدمة"
-            android:inputType="text"
-            android:padding="12dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-        <!-- 📌 وصف الخدمة -->
-        <EditText
-            android:id="@+id/etServiceDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="top"
-            android:hint="وصف الخدمة"
-            android:inputType="textMultiLine"
-            android:minLines="4"
-            android:padding="12dp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_add_a_photo" />
 
-        <!-- 📌 السعر -->
-        <EditText
-            android:id="@+id/etServicePrice"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="اضافة صورة خدمة" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="السعر (شيكل)"
-            android:inputType="number"
-            android:padding="12dp" />
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:hint="عنوان الخدمة">
 
-        <!-- 📌 الموقع -->
-        <EditText
-            android:id="@+id/etServiceLocation"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etServiceTitle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="الموقع"
-            android:inputType="text"
-            android:padding="12dp" />
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:hint="وصف الخدمة">
 
-        <!-- ✅ زر إضافة الخدمة -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etServiceDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:inputType="text"
+                android:maxLines="8"
+                android:minHeight="120dp"
+                android:minLines="3"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:hint="السعر المبدئي">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etServicePrice"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/btnAddService"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="36dp"
             android:backgroundTint="#1E88E5"
+            android:drawableEnd="@drawable/ic_add"
+            android:drawableTint="@color/white"
+            android:paddingVertical="13dp"
             android:text="إضافة الخدمة"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF" />
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnDeleteService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:backgroundTint="#E91E63"
+            android:drawableEnd="@drawable/ic_delete"
+            android:drawableTint="@color/white"
+            android:paddingVertical="13dp"
+            android:text="حذف الخدمة"
+            android:layout_marginVertical="8dp"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
 
     </LinearLayout>
+
 </ScrollView>

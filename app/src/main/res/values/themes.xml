@@ -6,6 +6,7 @@
     </style>
 
     <style name="TextInputLogin" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"/>
+
     <style name="Theme.FinalProject" parent="Base.Theme.FinalProject" />
 
 

@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:gravity="top"
         android:orientation="horizontal"
-        android:padding="12dp">
+        android:paddingHorizontal="12dp"
+        android:paddingTop="12dp">
 
-        <!-- صورة المستخدم -->
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/userImage"
             android:layout_width="50dp"
@@ -24,14 +24,12 @@
             android:src="@drawable/fake_image"
             app:roundPercent="0.5" />
 
-        <!-- محتوى التقييم (نصوص + نجوم + تعليق) -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <!-- اسم المستخدم -->
             <TextView
                 android:id="@+id/userName"
                 android:layout_width="wrap_content"
@@ -40,7 +38,7 @@
                 android:textColor="#333"
                 android:textSize="15sp"
                 android:textStyle="bold" />
-            <!-- ✅ نص التعليق -->
+
             <TextView
                 android:id="@+id/userComment"
                 android:layout_width="wrap_content"
@@ -48,7 +46,6 @@
                 android:layout_marginTop="8dp"
                 android:text="تعليق المستخدم على الخدمة هنا"
                 android:textColor="#666"
-
                 android:textSize="14sp" />
 
             <!-- التقييم نجوم -->
@@ -65,8 +62,8 @@
                 android:stepSize="1"
                 android:theme="@style/YellowRatingBar" />
 
-
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -1,66 +1,121 @@
 package dev.final_group.khadamati.screens.service_provider.home;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import dev.final_group.khadamati.R;
+import dev.final_group.khadamati.adapters.MyServiceAdapter;
+import dev.final_group.khadamati.databinding.FragmentMyServicesBinding;
+import dev.final_group.khadamati.models.MyService;
+import dev.final_group.khadamati.screens.service_provider.AddEditServiceActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MyServicesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class MyServicesFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class MyServicesFragment extends Fragment implements MyServiceAdapter.OnMyServiceClickListener {
+    private FragmentMyServicesBinding binding;
+    private  MyServiceAdapter adapter;
+    private ActivityResultLauncher<Intent> editServiceLauncher;
 
     public MyServicesFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MyServicesFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MyServicesFragment newInstance(String param1, String param2) {
-        MyServicesFragment fragment = new MyServicesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_services, container, false);
+        binding = FragmentMyServicesBinding.inflate(inflater, container, false);
+
+        editServiceLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if (data != null && data.hasExtra("deletedServiceId")) {
+                            int deletedId = data.getIntExtra("deletedServiceId", -1);
+                            adapter.removeServiceFromList(deletedId);
+                        }
+                    }
+                }
+        );
+
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        List<MyService> serviceList = new ArrayList<>();
+        serviceList.add(new MyService(
+                1,
+                "تنظيف المنازل",
+                "تنظيف شامل للمنازل مع توفير عمالة محترفة.",
+                150,
+                R.drawable.image1
+        ));
+
+        serviceList.add(new MyService(
+                2,
+                "صيانة كهرباء",
+                "خدمة إصلاح وصيانة كافة الأعطال الكهربائية.",
+                200,
+                R.drawable.image2
+        ));
+
+        serviceList.add(new MyService(
+                3,
+                "سباكة",
+                "خدمة إصلاح الأعطال وتسليك المجاري وتركيب الأدوات الصحية.",
+                180,
+                R.drawable.image1
+        ));
+
+        serviceList.add(new MyService(
+                4,
+                "نقل الأثاث",
+                "نقل الأثاث بأمان مع فك وتركيب.",
+                300,
+                R.drawable.image2
+        ));
+
+        serviceList.add(new MyService(
+                5,
+                "تنظيف السجاد",
+                "تنظيف وغسيل السجاد باستخدام معدات متخصصة.",
+                100,
+                R.drawable.image1
+        ));
+
+
+        binding.fabAddService.setOnClickListener(v -> {
+            startActivity(new Intent(requireContext(), AddEditServiceActivity.class));
+        });
+
+        binding.rvMyServices.setHasFixedSize(true);
+        binding.rvMyServices.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        adapter = new MyServiceAdapter(serviceList, this);
+        binding.rvMyServices.setAdapter(adapter);
+    }
+
+    @Override
+    public void onMyServiceClick(MyService myService) {
+        Intent intent = new Intent(requireContext(), AddEditServiceActivity.class);
+        intent.putExtra("myService", myService);
+        intent.putExtra("isEdit", true);
+        editServiceLauncher.launch(intent);
     }
 }

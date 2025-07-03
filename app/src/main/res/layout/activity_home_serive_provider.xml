@@ -21,5 +21,5 @@
         android:layout_height="wrap_content"
         app:itemIconTint="@color/nav_icon_selector"
         app:itemTextColor="@color/nav_text_selector"
-        app:menu="@menu/bottom_nav_menu1" />
+        app:menu="@menu/service_provider_bottom_nav_menu" />
 </LinearLayout>

@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import dev.final_group.khadamati.MainActivity;
 import dev.final_group.khadamati.databinding.FragmentSettingsBinding;
-import dev.final_group.khadamati.screens.client.EditeProfile;
+import dev.final_group.khadamati.screens.client.EditeProfileActivity;
 import dev.final_group.khadamati.screens.client.BookMarksActivity;
 
 
@@ -51,7 +51,7 @@ public class SettingsFragment extends Fragment {
 //        binding.nameText.setText(profile.getName());
 //        binding.phoneText.setText(profile.getNumber_phone());
         binding.btnEditProfile.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), EditeProfile.class);
+            Intent intent = new Intent(requireContext(), EditeProfileActivity.class);
             startActivity(intent);
         });
     }

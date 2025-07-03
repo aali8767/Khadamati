@@ -13,21 +13,12 @@ import com.google.android.material.tabs.TabLayout;
 
 public class RegisterActivity extends AppCompatActivity {
     private ActivityRegisterBinding binding;
-    private ActivityResultLauncher<String> mGetContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
-            if (uri != null) {
-                binding.ivUserImage.setImageURI(uri);
-            }
-        });
-
-        binding.cardAddImage.setOnClickListener(view -> mGetContent.launch("image/*"));
 
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("مستفيد"));
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("مزود خدمة"));

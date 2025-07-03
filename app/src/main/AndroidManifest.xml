@@ -22,7 +22,7 @@
             android:name="dev.final_group.khadamati.screens.service_provider.EditProviderProfileActivity"
             android:exported="false" />
         <activity
-            android:name="dev.final_group.khadamati.screens.service_provider.AddServiceActivity"
+            android:name="dev.final_group.khadamati.screens.service_provider.AddEditServiceActivity"
             android:exported="false" />
         <activity
             android:name="dev.final_group.khadamati.screens.service_provider.ServiceDetailsActivity"
@@ -31,10 +31,7 @@
             android:name="dev.final_group.khadamati.screens.service_provider.home.ProviderRequestDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="dev.final_group.khadamati.screens.service_provider.home.HomeServiceProviderActivity"
-            android:exported="false" />
-        <activity
-            android:name="dev.final_group.khadamati.screens.client.EditeProfile"
+            android:name="dev.final_group.khadamati.screens.client.EditeProfileActivity"
             android:exported="false" />
         <activity
             android:name="dev.final_group.khadamati.screens.client.RateServiceActivity"
@@ -52,13 +49,25 @@
             android:name="dev.final_group.khadamati.screens.client.ServiceDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="dev.final_group.khadamati.screens.client.home.HomeClientActivity"
-            android:exported="false" />
-        <activity
             android:name="dev.final_group.khadamati.screens.auth.RegisterActivity"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name="dev.final_group.khadamati.screens.service_provider.home.HomeServiceProviderActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name="dev.final_group.khadamati.MainActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
             android:name="dev.final_group.khadamati.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.service_provider.home.HomeServiceProviderActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

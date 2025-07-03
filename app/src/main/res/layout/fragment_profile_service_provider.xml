@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:clipToPadding="false"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="20dp">
+    tools:context=".screens.service_provider.home.ProfileServiceProviderFragment">
 
     <!-- صورة البروفايل -->
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/profileImage"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/image3"
         app:roundPercent="1" />
 
@@ -64,6 +65,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="16dp"
         app:cardBackgroundColor="@color/white"
         app:cardElevation="0dp"
@@ -138,6 +140,7 @@
         android:id="@+id/editeBt"
         android:layout_width="match_parent"
         android:layout_height="58dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/light_gray"
         android:text="تعديل الملف الشخصي"
@@ -146,5 +149,13 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:cornerRadius="12dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/allRatingRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="match_parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_rating" />
 
 </LinearLayout>
