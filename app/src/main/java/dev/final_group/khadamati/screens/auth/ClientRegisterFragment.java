@@ -27,7 +27,7 @@ public class ClientRegisterFragment extends Fragment {
     private Uri idImageUri = null;
     private Uri prfileImageUri = null;
 
-    String fullName, email, phoneNumber, password, confirmPassword;
+    String fullName, phoneNumber, password, confirmPassword;
 
     private ActivityResultLauncher<String> pickProfileImageLauncher;
     private ActivityResultLauncher<Intent> pickIdImageLauncher;
@@ -71,17 +71,17 @@ public class ClientRegisterFragment extends Fragment {
 
     private void registerClient() {
         fullName = Objects.requireNonNull(binding.NameET.getText()).toString().trim();
-        email = Objects.requireNonNull(binding.teEmail.getText()).toString().trim();
+//        email = Objects.requireNonNull(binding.teEmail.getText()).toString().trim();
         phoneNumber = Objects.requireNonNull(binding.PhoneET.getText()).toString().trim();
         password = Objects.requireNonNull(binding.PasswordET.getText()).toString().trim();
         confirmPassword = Objects.requireNonNull(binding.ConfirmePasswordET.getText()).toString().trim();
 
-        if (!validateInputs(fullName, email, phoneNumber, password, confirmPassword)) return;
+        if (!validateInputs(fullName, phoneNumber, password, confirmPassword)) return;
 
         navigateToHome();
     }
 
-    private boolean validateInputs(String fullName, String email, String phone, String password, String confirmPassword) {
+    private boolean validateInputs(String fullName, String phone, String password, String confirmPassword) {
         if (prfileImageUri == null) {
             showToast("الرجاء اختبار صورة الحساب");
             return false;
@@ -90,10 +90,10 @@ public class ClientRegisterFragment extends Fragment {
             binding.NameET.setError("الرجاء إدخال الاسم الكامل");
             return false;
         }
-        if (email.isEmpty()) {
-            binding.teEmail.setError("الرجاء إدخال البريد الإلكتروني");
-            return false;
-        }
+//        if (email.isEmpty()) {
+//            binding.teEmail.setError("الرجاء إدخال البريد الإلكتروني");
+//            return false;
+//        }
         if (phone.isEmpty()) {
             binding.PhoneET.setError("الرجاء إدخال رقم الهاتف");
             return false;

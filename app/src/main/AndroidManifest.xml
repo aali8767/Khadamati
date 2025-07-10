@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject"
         tools:targetApi="31">
+
         <activity
             android:name="dev.final_group.khadamati.screens.service_provider.RatingActivity"
             android:exported="false" />
@@ -51,30 +52,21 @@
         <activity
             android:name="dev.final_group.khadamati.screens.auth.RegisterActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name="dev.final_group.khadamati.screens.service_provider.home.HomeServiceProviderActivity"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name="dev.final_group.khadamati.MainActivity"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-        <activity
-            android:name="dev.final_group.khadamati.MainActivity"
-            android:exported="false" />
         <activity
             android:name="dev.final_group.khadamati.screens.service_provider.home.HomeServiceProviderActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.screens.client.home.HomeClientActivity"
+            android:exported="false" />
+        <activity
+            android:name="dev.final_group.khadamati.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

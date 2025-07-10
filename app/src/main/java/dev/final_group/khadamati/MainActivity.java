@@ -30,16 +30,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-        String email = Objects.requireNonNull(binding.etEmail.getText()).toString().trim();
+        String phone = Objects.requireNonNull(binding.etPhone.getText()).toString().trim();
         String password = Objects.requireNonNull(binding.passwordEt.getText()).toString().trim();
 
-        if (!validateInputs(email, password)) return;
+        if (!validateInputs(phone, password)) return;
         navigateToHome(false);
     }
 
     private boolean validateInputs(String email, String password) {
         if (email.isEmpty()) {
-            binding.etEmail.setError("الرجاء إدخال البريد الإلكتروني");
+            binding.etPhone.setError("الرجاء إدخال رقم الهاتف");
             return false;
         }
         if (password.isEmpty()) {

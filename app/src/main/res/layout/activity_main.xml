@@ -31,24 +31,24 @@
         app:layout_constraintTop_toBottomOf="@id/signInTV" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputEmail"
+        android:id="@+id/TextInput_phone"
         style="@style/TextInputLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="10dp"
-        android:hint="Enter Your Email"
+        android:hint="Enter Your phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/LogoIv">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etPhone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:drawableStart="@drawable/ic_email"
+            android:drawableStart="@drawable/phone_24"
             android:drawablePadding="20dp"
-            android:inputType="textEmailAddress"
+            android:inputType="phone"
             android:singleLine="true"
             android:textSize="15sp" />
 
@@ -66,7 +66,7 @@
         app:endIconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextInputEmail">
+        app:layout_constraintTop_toBottomOf="@id/TextInput_phone">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEt"

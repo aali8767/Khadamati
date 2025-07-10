@@ -15,14 +15,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- صورة الخدمة -->
+
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image3" />
 
-            <!-- معلومات مزود الخدمة والعنوان -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
                     android:textSize="20sp" />
             </LinearLayout>
 
-            <!-- وصف الخدمة -->
+
             <TextView
                 android:id="@+id/serviceDescriptionTv"
                 android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                 android:text="وصف تفصيلي للخدمة التي يقدمها مزود الخدمة. هنا يتم عرض كافة التفاصيل المطلوبة للعميل. . هنا يتم عرض كافة التفاصيل المطلوبة للعميل. . هنا يتم عرض كافة التفاصيل المطلوبة للعميل. . هنا يتم عرض كافة التفاصيل المطلوبة للعميل."
                 android:textSize="16sp" />
 
-            <!-- ✅ السعر -->
+
             <TextView
                 android:id="@+id/priceTv"
                 android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                 android:text="💰 السعر المبدئي: 100 شيكل"
                 android:textSize="15sp" />
 
-            <!-- ✅ الموقع -->
+
             <TextView
                 android:id="@+id/locationTv"
                 android:layout_width="match_parent"
@@ -84,7 +84,6 @@
                 android:textSize="15sp" />
 
 
-            <!-- ✅ عدد المشاهدات -->
             <TextView
                 android:id="@+id/viewsCountTv"
                 android:layout_width="match_parent"
@@ -94,7 +93,7 @@
                 android:text="👁️‍🗨️ عدد المشاهدات: 42"
                 android:textSize="15sp" />
 
-            <!-- عنوان التقييمات -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,7 +103,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- RecyclerView للتقييمات -->
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ratingRecyclerView"
                 android:layout_width="match_parent"
@@ -115,7 +114,6 @@
                 tools:itemCount="4"
                 tools:listitem="@layout/item_rating" />
 
-            <!-- Spacer -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="120dp" />

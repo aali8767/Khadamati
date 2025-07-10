@@ -10,7 +10,7 @@
     android:orientation="vertical"
     tools:context=".screens.service_provider.home.ProfileServiceProviderFragment">
 
-    <!-- صورة البروفايل -->
+
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/profileImage"
         android:layout_width="120dp"
